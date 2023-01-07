@@ -16,7 +16,7 @@ app.use(csrf("this_should_be_32_character_long", ["POST", "PUT", "DELETE"]));
 app.set("view engine", "ejs");
 app.get("/", async (request, response) => {
   const allTodos = await Todo.getTodos();
-  const overdue = await Todo.overdue()
+  const overdue = await Todo.overdue();
   const dueLater = await Todo.dueLater();
   const dueToday = await Todo.dueToday();
   const completedItems = await Todo.completedItems();
